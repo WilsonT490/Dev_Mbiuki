@@ -16,10 +16,6 @@ header {
     background-color: #111111;
     color: #D4AF37; /* Gold */
     padding: 20px;
-    display: flex;         /* Use the display box model */
-    flex-direction: column; /* Stack the Title above the Nav links */
-    justify-content: center; /* Center vertically */
-    align-items: center;     /* Center horizontally */
     text-align: center;
     border-bottom: 3px solid #D4AF37;
 }
@@ -27,9 +23,8 @@ header {
 nav a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 40px;
+    margin: 0 15px;
     font-weight: bold;
-    justify-content: center;
 }
 
 nav a:hover {
@@ -53,42 +48,39 @@ h2 {
 
 #about {
     /* Using a dark linear-gradient so the image is a "tint" */
- background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
                 url('https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?w=800');
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 #projects {
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
                 url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800');
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 #reservation {
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
                 url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800');
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 #contact {
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
                 url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800');
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 /* Simple Form Styles */
 input, textarea {
     width: 100%;
-    min-height: 100dvh;
-    padding: 10px;
+    padding: 30px;
     margin: 10px 0;
     background-color: #222;
     color: white;
     border: 1px solid #D4AF37;
+    font-size: xx-large;
+
 }
 
 button {
@@ -99,8 +91,6 @@ button {
     font-weight: bold;
     cursor: pointer;
     width: 100%;
-    justify-content: center;
-    text-align: center;
 }
 
 /* Basic Footer Gradient */
@@ -113,3 +103,143 @@ footer {
     font-weight: bold;
 }
 
+/* BASIC RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden; /* Prevents side-scrolling */
+}
+
+/* NAVIGATION */
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    position: fixed; /* Keeps menu at the top */
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #D4AF37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #D4AF37; /* Gold hover */
+}
+
+/* FULL SCREEN SECTIONS */
+section {
+    height: 100vh; /* Exactly one full screen high */
+    display: flex; /* "Display Box" model */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+h2 {
+    font-size: 3rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* SECTION BACKGROUNDS */
+#about {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?w=1000');
+}
+
+#projects {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1000');
+}
+
+#referees {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000');
+}
+
+/* REFEREES HORIZONTAL ARRANGEMENT */
+.referee-container {
+    display: flex; /* Arranges children horizontally */
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.referee-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border: 1px solid #D4AF37;
+    border-radius: 10px;
+    width: 250px;
+    transition: 0.4s; /* Smooth hover */
+}
+
+/* HOVER FEATURE */
+.referee-card:hover {
+    background: #D4AF37;
+    color: #000;
+    transform: translateY(-10px); /* Lifts up on hover */
+    cursor: pointer;
+}
+
+/* CLASSY GRADIENT FOOTER */
+footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #996515, #D4AF37, #996515);
+    color: black;
+    font-weight: bold;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 2px solid #D4AF37;
+    
+    /* THE CENTERING MAGIC */
+    display: flex;         /* Use the display box model */
+    flex-direction: column; /* Stack the Title above the Nav links */
+    justify-content: center; /* Center vertically */
+    align-items: center;     /* Center horizontally */
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; /* Ensures H1 is on top of Nav */
+    align-items: center;     /* Centers both the H1 and the Nav */
+    gap: 10px;               /* Adds a little space between Title and Links */
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Centers the links inside the nav bar */
+}
